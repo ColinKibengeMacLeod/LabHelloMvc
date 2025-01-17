@@ -15,7 +15,13 @@ namespace LabHelloMvc.Controllers
 
         public IActionResult Index()
         {
-            return View();
+
+            Person person1 = new Person();
+            person1.PersonId = 1;
+            person1.FirstName = "Colin";
+            person1.LastName = "Kibenge-MacLeod";
+
+            return View(person1);
         }
 
         public IActionResult Privacy()
@@ -23,10 +29,5 @@ namespace LabHelloMvc.Controllers
             return View();
         }
 
-        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-        public IActionResult Error()
-        {
-            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
-        }
     }
 }
